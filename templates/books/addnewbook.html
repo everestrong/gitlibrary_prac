@@ -1,0 +1,42 @@
+{% extends "layout.html" %}  
+{%block header%}{{super()}}{%endblock%}
+
+{%block content%}
+<br><br>
+<div style="text-align: ;font-size: 150%">
+<a class="pushLeft" href="/books/displayallbooks">display all books</a>
+<a class="pushLeft" href="/books/findbook">Find a book</a>
+<a class="pushLeft" href="/books/addnewbook">Add a new book</a>
+<a class="pushLeft" href="/books/removebook">Remove a book from the library</a>
+</div>
+<div style="text-align: center;">
+    <br>
+<h1 >Add a new book here</h1>
+
+<form action="/books/addnewbook" method="POST">
+
+    <label> enter the book ID:</label>
+    <br>
+    <input name="ID" type="number" placeholder="book id" required autofocus>
+    <br><br>
+    <label>Please enter Book name: </label>
+    <br>
+    <input name="bookname"  placeholder="book name" required autofocus>
+    <br><br>
+    <label>Please enter Author: </label>
+    <br>
+    <input type="text"  name="author"  placeholder="book author" required>
+    <br><br>
+    <label>Please enter Year Published: </label>
+    <br>    
+    <input  name="yearpublished" type="number" name="type" min="1" max="9999" placeholder="Year published" required>
+    <br><br>
+    <label>Please enter Book Type (1/2/3): </label>
+    <br>   1:loan for 10 day , 2:loan for 5 day , 3:loan for 2 day
+    <input name="booktype"  type="number" name="type" min="1" max="3" placeholder="1/2/3" required>
+    <br><br>
+    <button type="submit">Add book</button>
+    {{msg}}
+</div>
+</form>
+{%endblock%}
