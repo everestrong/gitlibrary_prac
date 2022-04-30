@@ -1,0 +1,26 @@
+{% extends "layout.html" %} 
+{%block header%}{{super()}}{%endblock%}
+
+
+{%block content%}
+<br><br>
+<div style="text-align: ;font-size: 150%">
+    <a class="pushLeft" href="/loans/display_all_loans">Show all loans books in the library</a>
+    <a class="pushLeft" href="/display_late_loansans">Show all late loans books in the library</a>
+    <a class="pushLeft" href="/loans/loanbook">loan book</a>
+    <a class="pushLeft" href="/loans/returnbook">Return a loaned book</a>
+</div>
+    <div style="text-align: center;">
+    <h1 class="pushLeft">return a loaned book by it's ID</h1>
+
+    <form action="/loans/returnbook" method="POST">
+    
+        <label> enter the book ID here:</label>
+        <br>
+        <input name="bookID" type="number" placeholder="id" required autofocus>
+        <br><br>
+        <button type="submit">return the loned book!</button>
+    </div>
+    </form>
+    {%endblock%}
+   
