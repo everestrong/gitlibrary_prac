@@ -2,9 +2,7 @@ import json
 from flask import Flask , render_template, request
 import sqlite3 
 from sqlite3 import Error
-import tools.books as libbooks
-import tools.customers as libcust
-import tools.loans as libloans
+
 
 
 con = sqlite3.connect('library.db', check_same_thread=False)
