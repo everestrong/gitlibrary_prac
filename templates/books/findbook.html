@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{%block content%}
+<br><br>
+<div style="text-align: ;font-size: 150%">
+<a class="pushLeft" href="/books/displayallbooks">display all books</a>
+<a class="pushLeft" href="/books/findbook">Find a book</a>
+<a class="pushLeft" href="/books/addnewbook">Add a new book</a>
+<a class="pushLeft" href="/books/removebook">Remove a book from the library</a>
+</div>
+<div style="text-align: center;">
+<br>
+<h1 class="pushLeft"> find a book You look for</h1>
+
+<div class="pushLeft">
+    <form action="/books/findbook" method="POST">
+        <label>Book Name:</label>
+        <br>
+        <input  name="bookname" >
+        <button type="Submit">Find the book!</button>
+        <br><br>
+        <label>Book Author:</label>
+        <br>
+        <input  name="author">
+        <button type="Submit">Find the book!</button>
+    </form>
+</div>
+
+<br><br>
+
+<div class="pushLeft">
+    <table>
+        <tr>
+            <th>bookID</th>
+            <th>bookName</th>
+            <th>Author</th>
+            <th>YearPublished</th>
+            <th>bookType</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book[0]}}</td>
+            <td>{{book[1]}}</td>
+            <td>{{book[2]}}</td>
+            <td>{{book[3]}}</td>
+            <td>{{book[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{%endblock%}

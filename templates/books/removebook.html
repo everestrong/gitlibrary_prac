@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{%block header%}{{super()}}{%endblock%}
+{%block content%}
+<br><br>
+<div style="text-align: ;font-size: 150%">
+<a class="pushLeft" href="/books/displayallbooks">display all books</a>
+<a class="pushLeft" href="/books/findbook">Find a book</a>
+<a class="pushLeft" href="/books/addnewbook">Add a new book</a>
+<a class="pushLeft" href="/books/removebook">Remove a book from the library</a>
+</div>
+<div class="pushLeft">
+    <form style="text-align: center;" action="/books/removebook" method="POST">
+        <br>
+        <h1 class="center"> remove a book </h1>
+        <br>
+        <br>
+        <label>Book name:</label>
+        <br>
+        <input type="text" name="bookname" required autofocus>
+        <br><br>
+        <label>Book ID:</label>
+        <br>
+        <input type="number" name="ID" required autofocus>
+        <br><br>
+        <button type="reset">Reset</button>
+        <button type="submit">Remove</button>
+    </form>
+</div>
+<br><br>
+<div class="pushLeft">
+    {{bRem}}&nbsp;<a href="/books/displayallbooks">{{goToBookDatabase}}</a> {{goDB}}
+</div>
+{%endblock%}
