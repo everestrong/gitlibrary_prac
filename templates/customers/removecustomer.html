@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{%block header%}{{super()}}{%endblock%}
+{%block content%}
+<br><br>
+<div style="text-align: ;font-size: 150%">
+    <a class="pushLeft" href="/customers/displaycustomers">Show all customers in the library</a>
+    <a class="pushLeft" href="/customers/addnewcustomer">Add new customer to library</a>
+    <a class="pushLeft" href="/customers/findcustomer">Search for customer</a>
+    <a class="pushLeft" href="/customers/removecustomer">Remove customer from library</a>
+</div>
+    <div style="text-align: center;">
+       
+    <h1 class="pushLeft">Remove customer </h1>
+
+    <div class="pushLeft">
+    <form style="text-align: center;" action="/customers/removecustomer" method="POST">
+        <br>
+        <label>Customer name:</label>
+        <br>
+        <input type="text" name="cusname" required autofocus>
+        <br>
+        <label>Customer ID:</label>
+        <br>
+        <input type="number" name="customerID"required autofocus>
+        <br><br>
+        <button type="submit">Remove</button>
+    </form>
+</div>
+<br>
+<div class="pushLeft">
+    {{cRem}}&nbsp;<a href="/customers/displaycustomers">{{goToBookDatabase}}</a> {{goBack}}
+</div>
+
+{%endblock%}

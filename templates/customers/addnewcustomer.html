@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{%block header%}{{super()}}{%endblock%}
+{%block content%}
+<br><br>
+<div style="text-align: ;font-size: 150%">
+    <a class="pushLeft" href="/customers/displaycustomers">Show all customers in the library</a>
+    <a class="pushLeft" href="/customers/addnewcustomer">Add new customer to library</a>
+    <a class="pushLeft" href="/customers/findcustomer">Search for customer</a>
+    <a class="pushLeft" href="/customers/removecustomer">Remove customer from library</a>
+  </div>
+<form style="text-align: center; "action="/customers/addnewcustomer" method="POST">
+  <h1>Add new customer</h1>
+    <label> enter the book ID:</label>
+    <br>
+    <input name="customerID" type="number" placeholder="customer id" required autofocus>
+    <br><br>
+    <label>Customer Name:</label>
+    <br>
+    <input type="text" name="cusname" required autofocus>
+    <br><br>
+    <label>City:</label>
+    <br>
+    <input type="text" name="cuscity" required>
+    <br><br>
+    <label>Age:</label>
+    <br>
+    <input type="number" min="1" name="cusage" required>
+    <br><br>
+    <button type="submit">Add Customer</button>
+</form>
+
+
+{%endblock%}
