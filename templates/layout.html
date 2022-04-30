@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href='/static/CSS/styles.css'>
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: rgb(245, 241, 241);
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #111;
+        }
+
+        body  {
+          background-image: url();
+          background-color: #cccccc;
+        }
+        </style>
+  </head>
+  <body style="background-image: url('/static/image/image_1.jpg');background-repeat: no-repeat;background-size: cover;"></body>>  
+       
+    <ul>
+        <li><a class="active" href="/home">Home</a></li>
+        <li><a href="/books/books">Books</a></li>
+        <li><a href="/customers/customers">Customers</a></li>
+        <li><a href="/loans/loans">Loans</a></li>
+      </ul>
+      
+    <div id="content">{% block content %}{% endblock %}</div>
+    {% block background %} {% endblock %}
+    
+
+      
+
+      <div style="text-align: center;">
+      <br><br><br><br><br><br><br><br><br><br>
+      {% block copy %}
+      &copy; Copyright 2022 by <a href="mailto:hege@example.com">Yoed Baram</a>.
+      {% endblock %}
+      <br><br>
+       {% block footer %}
+      &copy; My first project &copy; <a href="https://www.youtube.com/watch?v=NOW7i7aWQoE">The Doors to! The End of the project</a> &copy; My first project &copy;
+      {% endblock %}
+    </div>
+    
+      
+  </body>
+</html>
